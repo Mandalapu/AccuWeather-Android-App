@@ -1,0 +1,271 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/mainlayout">
+
+
+    <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:id="@+id/forecastcontainer">
+
+       <TextView android:text="@string/forecast"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:id="@+id/forecast"
+        android:layout_alignParentStart="false"
+        android:gravity="center"
+           android:layout_marginTop="30dp"
+           android:fontFamily="bold"
+           android:textColor="#000000"
+           android:textSize="25dp" />
+
+    </RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/middlecontainer"
+    android:layout_below="@+id/forecastcontainer"
+    android:layout_marginTop="22dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/streetcontainer">
+
+    <TextView android:text="@string/street"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_street"
+        android:textColor="#000000"
+        android:textSize="22dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ET_street"
+        android:layout_alignBaseline="@+id/TV_street"
+        android:layout_marginLeft="90dp"
+        />
+</RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/citycontainer"
+
+        android:layout_below="@+id/streetcontainer"
+        android:layout_marginTop="22dp">
+
+        <TextView android:text="@string/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_city"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ET_city"
+
+            android:layout_alignBaseline="@+id/TV_city"
+            android:layout_marginLeft="90dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/statecontainer"
+
+        android:layout_below="@+id/citycontainer"
+        android:layout_marginTop="22dp">
+
+        <TextView android:text="@string/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_state"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Spinner_state"
+
+        android:layout_marginLeft="90dp"
+        android:entries="@array/states_list"/>
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/degreecontainer"
+
+        android:layout_below="@+id/statecontainer"
+        android:layout_marginTop="22dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_degree"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:text="@string/degree"
+            />
+        <RadioGroup
+            android:id="@+id/RD_degree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/radioFahrenheit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fahrenheit"
+                android:padding="12dp"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioCelsius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Celsius"
+                android:padding="12dp"/>
+
+        </RadioGroup>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttoncontainer"
+
+        android:layout_below="@+id/degreecontainer"
+        android:layout_marginTop="22dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:id="@+id/BT_search"
+             />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:layout_marginLeft="110dp"
+            android:layout_alignBaseline="@+id/BT_search"
+            android:id="@+id/BT_clear"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/errorcontainer"
+
+        android:layout_below="@+id/buttoncontainer"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_streeterror"
+            android:textColor="#BA2222"
+            android:textSize="15dp"
+            android:gravity="center_horizontal"
+            android:text=""
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_cityerror"
+            android:textColor="#BA2222"
+            android:textSize="15dp"
+            android:layout_below="@+id/TV_streeterror"
+            android:gravity="center_horizontal"
+            android:text=""
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_stateerror"
+            android:textColor="#BA2222"
+            android:textSize="15dp"
+            android:layout_below="@+id/TV_cityerror"
+            android:gravity="center_horizontal"
+            android:text=""
+            />
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutcontainer"
+
+        android:layout_below="@+id/errorcontainer"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+
+            android:id="@+id/BT_about"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_poweredby"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:paddingTop="10dp"
+           android:layout_alignTop="@+id/BT_about"
+            android:layout_marginLeft="200dp"
+            android:text="Powered By:"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_forecast"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:layout_below="@+id/TV_poweredby"
+            android:layout_marginLeft="200dp"
+            android:text="Forecast"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
